@@ -9,7 +9,7 @@ bind-address = "0.0.0.0"
 
 [logging]
 # logging level can be one of "debug", "info", "warn" or "error"
-level  = "info"
+level  = "error"
 file   = "/opt/influxdb/shared/log.txt"         # stdout to log to standard out
 
 # Configure the admin server
@@ -32,10 +32,10 @@ read-timeout = "5s"
 
   # Configure the graphite api
   [input_plugins.graphite]
-  enabled = false
-  # port = 2003
-  # database = ""  # store graphite data in this database
-  # udp_enabled = true # enable udp interface on the same port as the tcp interface
+  enabled = true
+  port = 2003
+  database = ""  # store graphite data in this database
+  udp_enabled = false # enable udp interface on the same port as the tcp interface
 
   [input_plugins.udp]
   enabled = false
